@@ -1,11 +1,6 @@
 class ProductsController < ApplicationController
     skip_before_action :authorized, only: [:get_reviews, :filter_brand, :filter_category, 
-    :show, :popular_products, :get_brands, :onsale, :get_multiple_categories, :index, :create]
-
-    def create
-        product = Product.create(product_params)
-        render json: product
-    end
+    :show, :popular_products, :get_brands, :onsale, :get_multiple_categories, :index]
 
     def index
         product_name = params['name'].downcase

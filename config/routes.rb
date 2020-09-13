@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show]
   resources :cart_products, only: [:create, :destroy]
   resources :carts, only: [:create]
-  resources :reviews, only: [:show, :create]
+  resources :reviews, only: [:show]
   resources :auth, only: [:create]
   
   get '/products/category/:category', to: 'products#filter_category'
